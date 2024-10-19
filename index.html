@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You are very beautiful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-start; /* Вирівнювання по лівому краю */
+            align-items: flex-start; /* Вирівнювання по верхньому краю */
+            height: 100vh;
+            margin: 0; /* Прибирає відступи */
+            position: relative; /* Необхідно для абсолютного позиціювання псевдоелемента */
+            background-image: url('path/to/your-image.jpg'); /* Шлях до вашого зображення */
+            background-size: cover; /* Покриває весь екран */
+            background-position: center; /* Центрує фон */
+            background-repeat: no-repeat; /* Забороняє повторення фону */
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('123.jpg'); /* Задайте тут шлях до зображення фону */
+            background-size: cover; /* Покриває весь фон */
+            background-position: center; /* Центрує фон */
+            opacity: 0.2; /* Задайте тут прозорість фону (0 - прозорий, 1 - непрозорий) */
+            z-index: -1; /* Псевдоелемент буде позаду всього контенту */
+        }
+
+        /* Стиль для тексту */
+        .love-text {
+            position: absolute;
+            top: 50%; /* Центрує по вертикалі */
+            left: 50%; /* Центрує по горизонталі */
+            transform: translate(-50%, -50%); /* Вирівнює текст */
+            font-size: 60px; /* Розмір тексту */
+            font-weight: bold; /* Жирний текст */
+            color: #ff4d4d; /* Колір тексту */
+            white-space: nowrap; /* Запобігає переносу слів */
+            text-align: center; /* Центрує текст */
+        }
+        
+        .another-text {
+            position: absolute;
+            top: 50%; /* Центрує по вертикалі */
+            left: 50%; /* Центрує по горизонталі */
+            transform: translate(-50%, -50%); /* Вирівнює текст */
+            font-size: 60px; /* Розмір тексту */
+            font-weight: bold; /* Жирний текст */
+            color: #ff4d4d; /* Колір тексту */
+            white-space: nowrap; /* Запобігає переносу слів */
+            text-align: center; /* Центрує текст */
+        }
+
+        .additional-text {
+            position: absolute;
+            top: 50%; /* Центрує по вертикалі */
+            left: 50%; /* Центрує по горизонталі */
+            transform: translate(-50%, -50%); /* Вирівнює текст */
+            font-size: 60px; /* Розмір тексту */
+            font-weight: bold; /* Жирний текст */
+            color: #ff4d4d; /* Колір тексту */
+            white-space: nowrap; /* Запобігає переносу слів */
+            text-align: center; /* Центрує текст */
+        }
+ 
+
+        /* Додано поле для хрестиків-ноликів */
+        .tic-tac-toe {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            grid-template-rows: repeat(3, 60px);
+            gap: 5px;
+        }
+
+        .cell {
+    width: 60px; /* Збільшена ширина */
+    height: 60px; /* Збільшена висота */
+    background-color: rgba(255, 255, 255, 0.8); /* Прозорий фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px; /* Збільшений розмір шрифту */
+    font-weight: bold;
+    color: hwb(0 30% 0%);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+        .heart {
+            color: red;
+        }
+
+        .cross {
+            color: rgb(0, 0, 0);
+        }
+
+        /* Стиль для стикера */
+        .sticker {
+    position: absolute;
+    bottom: 50px; /* Відстань віднизу */
+    right: 20px; /* Відстань від правого краю */
+    width: 200px; /* Ширина стикера */
+    height: 300px; /* Висота стикера */
+    z-index: 1; /* Впереді всіх інших елементів */
+}
+
+    </style>
+</head>
+<body>
+
+<div class="background"></div> <!-- Додано для фону -->
+
+<!-- Додано текст LOVE ME, LOVE ME -->
+<style>
+    .love-text {
+        font-size: 45px; /* Розмір тексту */
+        margin: 10px;  /* Відступи зовні контейнера */
+        padding: 10px; /* Відступи всередині контейнера */
+        border: 2px solid #bb5757; /* Рамка для наочності */
+        position: absolute; /* Встановлює абсолютне позиціювання */
+        top: 250px; /* Позиція по осі Y */
+        left: 200px; /* Позиція по осі X */
+    }
+    
+    .another-text {
+        font-size: 40px; /* Розмір тексту */
+        margin: 10px;  /* Відступи зовні контейнера */
+        padding: 10px; /* Відступи всередині контейнера */
+        border: 2px solid #bb5757; /* Рамка для наочності */
+        position: absolute; /* Встановлює абсолютне позиціювання */
+        top: 350px; /* Позиція по осі Y */
+        left: 350px; /* Позиція по осі X */
+        color: #ff4d4d; /* Колір тексту */
+    }
+    .additional-text {
+        font-size: 45px; /* Розмір тексту */
+        margin: 10px;  /* Відступи зовні контейнера */
+        padding: 10px; /* Відступи всередині контейнера */
+        border: 2px solid #bb5757; /* Рамка для наочності */
+        position: absolute; /* Встановлює абсолютне позиціювання */
+        top: 450px; /* Позиція по осі Y */
+        left: 200px; /* Позиція по осі X */
+        color: #ff4d4d; /* Колір тексту */
+    }
+</style>
+</head>
+<body>
+<div class="love-text">
+    Love me, love me
+</div>
+<div class="another-text">
+    Say that you love me
+</div>
+<div class="additional-text">
+    Fool me, fool me
+</div>
+
+<div class="tic-tac-toe">
+    <div class="cell heart">❤️</div>
+    <div class="cell heart"></div>
+    <div class="cell heart"></div>
+    <div class="cell cross">✖</div>
+    <div class="cell heart">❤️</div>
+    <div class="cell cross">✖</div>
+    <div class="cell heart"></div>
+    <div class="cell heart"></div>
+    <div class="cell heart">❤️</div>
+</div>
+
+<!-- Додано стикер -->
+<img src="sticker.webp" alt="Стикер" class="sticker" style="width:200px; height:200px;">
+
+<!-- Додано аудіо для відтворення музики -->
+<audio id="audio" src="1234.mp3"></audio>
+
+<script>
+    const cells = document.querySelectorAll('.cell');
+
+    cells.forEach(cell => {
+        cell.addEventListener('click', function() {
+            // Якщо клітинка пуста, ставимо хрестик
+            if (!cell.textContent) {
+                cell.textContent = '✖'; // Ставимо хрестик
+                cell.classList.add('cross'); // Додаємо клас для стилізації
+            } 
+            // Якщо клітинка містить хрестик, видаляємо його
+            else if (cell.textContent === '✖') {
+                cell.textContent = ''; // Видаляємо хрестик
+                cell.classList.remove('cross'); // Прибираємо клас
+            }
+        });
+    });
+
+    const sticker = document.querySelector('.sticker');
+    const audio = document.getElementById('audio');
+
+    // Логіка для кліку по стікеру
+    sticker.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play(); // Відтворюємо музику, якщо на паузі
+        } else {
+            audio.pause(); // Ставимо на паузу, якщо музика вже грає
+        }
+    });
+</script>
+<div class="additional-text" id="emoji">
+<!-- Замість цього можна поставити будь-який інший емоджі -->
+</div>
+
+
+<script>
+    const emoji = document.getElementById('emoji');
+
+    emoji.addEventListener('click', function() {
+        window.location.href = 'index2.html'; // Перенаправлення на index.html
+    });
+</script>
+
+
+</body>
+</html>
